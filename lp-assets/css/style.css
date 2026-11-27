@@ -219,3 +219,31 @@ html:not(.js) .burger { display: none; }
 
 /* Vorübergehend, bis die Inhalte stehen – danach löschen */
 .todo-placeholder { padding: 200px 40px; text-align: center; font-family: var(--font-head); }
+
+/* ==========================================================================
+   Seitenleiste rechts: Social Links + Hinweis Neupatienten
+   ========================================================================== */
+.side-bar {
+  position: fixed; right: 0; top: 50%; z-index: 40; transform: translateY(-50%);
+  display: flex; flex-direction: column; align-items: flex-end; gap: 6px;
+}
+.side-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 46px; height: 46px; border-radius: 6px 0 0 6px;
+  background: var(--teal-ui); color: var(--dark); transition: background-color .2s, color .2s, width .2s;
+}
+.side-btn .icon { width: 22px; height: 22px; }
+.side-btn:hover { background: var(--dark); color: var(--white); width: 52px; }
+.side-badge {
+  writing-mode: vertical-rl; transform: rotate(180deg);
+  background: var(--dark); color: var(--white); border-radius: 0 6px 6px 0; box-shadow: 0 0 0 1px rgba(255, 255, 255, .25);
+  padding: 18px 12px; font-weight: 500; font-size: 14px; letter-spacing: .02em; line-height: 1.2;
+  transition: background-color .2s, color .2s;
+}
+.side-badge:hover { background: var(--teal-ui); color: var(--dark); }
+
+@media (max-width: 760px) {
+  .side-btn { display: none; }
+  .side-badge { padding: 14px 9px; font-size: 13px; }
+}
+.nav-open .side-bar { display: none; }
