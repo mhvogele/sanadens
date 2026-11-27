@@ -71,7 +71,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-
 /* ==========================================================================
    Topbar (scrollt mit, Header darunter bleibt sticky)
    ========================================================================== */
-.topbar { background: #c2c2c2; color: #2b2b2b; font-size: 15px; }
+.topbar { background: var(--white); color: var(--dark); font-size: 15px; }
 .topbar-inner { display: flex; align-items: stretch; min-height: 75px; }
 .topbar a { display: inline-flex; align-items: center; gap: 8px; transition: color .2s, background-color .2s; }
 .topbar .icon { width: 16px; height: 16px; }
@@ -85,11 +85,10 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-
 .tb-info { flex: 1; display: flex; align-items: center; justify-content: flex-end; gap: 6px 26px; flex-wrap: wrap; padding: 10px 30px; }
 .tb-info a:hover { color: #1f5f6f; }
 .tb-new {
-  flex: 0 0 20%; flex-direction: column; justify-content: center; gap: 4px !important; text-align: center;
+  flex: 0 0 20%; justify-content: center; text-align: center;
   background: #0074a7; color: var(--white); font-weight: 700; font-size: 15px; line-height: 1.2; padding: 8px 14px;
 }
 .tb-new:hover { background: #00628d; }
-.tb-signet { width: 30px; height: 30px; }
 
 /* ==========================================================================
    Header
@@ -227,8 +226,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-
   .topbar-inner { min-height: 58px; padding: 0; }
   .tb-phone { font-size: 17px; gap: 8px; }
   .tb-phone .icon { width: 17px; height: 17px; }
-  .tb-new { flex: 0 0 46%; font-size: 13px; flex-direction: row; gap: 8px !important; text-align: left; }
-  .tb-signet { width: 24px; height: 24px; flex: none; }
+  .tb-new { flex: 0 0 46%; font-size: 13px; }
   .logo svg { width: 160px; }
   .f-top { grid-template-columns: 1fr; gap: 44px; padding-top: 64px; }
   .f-contact { min-width: 0; }
