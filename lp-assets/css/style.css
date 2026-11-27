@@ -69,6 +69,29 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-
 .btn .icon { width: 18px; height: 18px; }
 
 /* ==========================================================================
+   Topbar (scrollt mit, Header darunter bleibt sticky)
+   ========================================================================== */
+.topbar { background: #c2c2c2; color: #2b2b2b; font-size: 15px; }
+.topbar-inner { display: flex; align-items: stretch; min-height: 75px; }
+.topbar a { display: inline-flex; align-items: center; gap: 8px; transition: color .2s, background-color .2s; }
+.topbar .icon { width: 16px; height: 16px; }
+.tb-phone {
+  flex: 0 0 33%; justify-content: center; gap: 12px;
+  background: #4e9b9b; color: var(--white);
+  font-weight: 700; font-size: 26px; letter-spacing: .01em; white-space: nowrap;
+}
+.tb-phone .icon { width: 22px; height: 22px; }
+.tb-phone:hover { background: #458a8a; }
+.tb-info { flex: 1; display: flex; align-items: center; justify-content: flex-end; gap: 6px 26px; flex-wrap: wrap; padding: 10px 30px; }
+.tb-info a:hover { color: #1f5f6f; }
+.tb-new {
+  flex: 0 0 20%; flex-direction: column; justify-content: center; gap: 4px !important; text-align: center;
+  background: #0074a7; color: var(--white); font-weight: 700; font-size: 15px; line-height: 1.2; padding: 8px 14px;
+}
+.tb-new:hover { background: #00628d; }
+.tb-signet { width: 30px; height: 30px; }
+
+/* ==========================================================================
    Header
    ========================================================================== */
 .site-header {
@@ -162,7 +185,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-
   .burger { display: inline-flex; position: relative; z-index: 2; }
 
   .nav {
-    position: fixed; inset: var(--header-h) 0 0 0; z-index: 1;
+    position: absolute; top: 100%; left: 0; right: 0; height: calc(100vh - var(--header-h)); height: calc(100dvh - var(--header-h)); z-index: 1;
     flex-direction: column; align-items: stretch; justify-content: flex-start; gap: 28px;
     background: var(--dark); padding: 16px var(--gutter) 40px; overflow-y: auto;
     opacity: 0; visibility: hidden; transition: opacity .25s, visibility .25s;
@@ -193,8 +216,19 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-
   .f-copy { padding-right: 0; }
 }
 
+@media (max-width: 1024px) {
+  .tb-info { display: none; }
+  .tb-phone { flex: 1; font-size: 22px; }
+  .tb-new { flex: 0 0 40%; }
+}
+
 @media (max-width: 760px) {
   :root { --header-h: 72px; }
+  .topbar-inner { min-height: 58px; padding: 0; }
+  .tb-phone { font-size: 17px; gap: 8px; }
+  .tb-phone .icon { width: 17px; height: 17px; }
+  .tb-new { flex: 0 0 46%; font-size: 13px; flex-direction: row; gap: 8px !important; text-align: left; }
+  .tb-signet { width: 24px; height: 24px; flex: none; }
   .logo svg { width: 160px; }
   .f-top { grid-template-columns: 1fr; gap: 44px; padding-top: 64px; }
   .f-contact { min-width: 0; }
@@ -221,7 +255,7 @@ html:not(.js) .burger { display: none; }
 .todo-placeholder { padding: 200px 40px; text-align: center; font-family: var(--font-head); }
 
 /* ==========================================================================
-   Seitenleiste rechts: Social Links + Hinweis Neupatienten
+   Seitenleiste rechts: Social Links
    ========================================================================== */
 .side-bar {
   position: fixed; right: 0; top: 50%; z-index: 40; transform: translateY(-50%);
@@ -234,16 +268,7 @@ html:not(.js) .burger { display: none; }
 }
 .side-btn .icon { width: 22px; height: 22px; }
 .side-btn:hover { background: var(--dark); color: var(--white); width: 52px; }
-.side-badge {
-  writing-mode: vertical-rl; transform: rotate(180deg);
-  background: var(--dark); color: var(--white); border-radius: 0 6px 6px 0; box-shadow: 0 0 0 1px rgba(255, 255, 255, .25);
-  padding: 18px 12px; font-weight: 500; font-size: 14px; letter-spacing: .02em; line-height: 1.2;
-  transition: background-color .2s, color .2s;
-}
-.side-badge:hover { background: var(--teal-ui); color: var(--dark); }
 
 @media (max-width: 760px) {
   .side-btn { display: none; }
-  .side-badge { padding: 14px 9px; font-size: 13px; }
-}
-.nav-open .side-bar { display: none; }
+  .nav-open .side-bar { display: none; }

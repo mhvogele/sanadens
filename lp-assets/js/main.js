@@ -20,7 +20,10 @@
   document.addEventListener('click', e => { if (!e.target.closest('.has-sub')) closeSubs(); });
 
   /* Mobiles Menü */
+  const header = document.querySelector('.site-header');
   const setMenu = open => {
+    // Topbar aus dem Bild scrollen, damit der Header oben andockt und das Menü den Bildschirm füllt
+    if (open && scrollY < header.offsetTop) scrollTo({ top: header.offsetTop, behavior: 'instant' });
     body.classList.toggle('nav-open', open);
     burger.setAttribute('aria-expanded', String(open));
     burger.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
