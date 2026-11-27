@@ -31,7 +31,7 @@ Die Landingpages sind statisches HTML. Sie liegen als echte Ordner im WordPress-
 ### Deployment
 - Nur die Landingpage-Ordner und `lp-assets/` hochladen, **niemals den ganzen Webroot synchronisieren**.
 - Ein `--delete` (rsync) nur innerhalb dieser Ordner verwenden, nie auf den Webroot. Sonst ist WordPress weg.
-- Deployt wird ausschließlich der Stand von `main`.
+- Gearbeitet wird auf `dev`, deployt wird ausschließlich der Stand von `main`.
 
 ---
 
@@ -115,7 +115,7 @@ Gemeinsam sein dürfen: Layout, Design, Leistungsbeschreibungen in Grundzügen, 
 
 ---
 
-## Checkliste vor dem Merge in `main`
+## Checkliste vor dem Merge von `dev` in `main`
 
 - [ ] Title, Meta-Description, `h1`, Canonical mit Ort und abschließendem Slash
 - [ ] Ortsspezifische Abschnitte eigenständig formuliert (kein reiner Ortsnamen-Tausch)
