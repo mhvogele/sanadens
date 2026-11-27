@@ -22,9 +22,9 @@ Die Ordner werden in den Webroot der Sanadens-WordPress-Seite gelegt und sind da
 
 ## Arbeitsweise mit Git
 
-- `main` ist immer der freigegebene Stand.
-- Änderungen in kurzlebigen Branches, z. B. `feature/krumbach-texte` oder `fix/footer`, danach per Pull Request in `main` mergen und den Branch löschen.
-- Keine dauerhaften Branches pro Ort.
+- `dev` ist der Arbeitsbranch. Alle Änderungen werden direkt dort committet und gepusht.
+- `main` ist der freigegebene Stand. Nur nach Abnahme wird `dev` in `main` gemergt, und nur `main` wird auf den Server deployt.
+- Vorschau des aktuellen Arbeitsstands: https://raw.githack.com/mhvogele/sanadens/dev/burgau/index.html (Ortsordner im Link austauschen)
 
 ## SEO-Hinweis
 
